@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		
+		body {
+			background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url("Gardenia.jpg") ;
+			background-repeat: none;
+			background-size: cover;
+			height: 850px;
+			margin: 0;
+		}
+
+		#nav {
+			width: 15%;
+			height: 100%;
+			background-color: blue;
+			position: fixed;
+		}
+
+		ul {
+			list-style-type: none;
+			margin-top: 70px;
+		}
+
+		li {
+			color: white;
+			font-size: 30px;
+			margin-bottom: 50px;
+			cursor: pointer;
+			transition: 1s;
+			text-align: center;
+			margin-left: -50px;
+		}
+
+		li:hover {
+			background-color: white;
+			color: blue;
+			margin-left: 20px;
+		}
+
+		#logout {
+			margin-top: 380px;
+		}
+
+		#content {
+			width: 80%;
+			float: right;
+			display: block;
+		}
+
+		#profile {
+			width: 80%;
+			float: right;
+			display: none;
+		}
+
+		#faculty {
+			width: 80%;
+			float: right;
+			display: none;
+		}
+
+		#logo {
+			width:165px; 
+			height:165px;		}
+
+		.logo {
+			margin: 0 auto;
+			width: 165px;
+			height: 165px;
+		}
+
+		.box {
+			width: 20%;
+			height: 200px;
+			float: left;
+			border: solid;
+			border-radius: 30px;
+			border-width: 3px;
+			margin: 50px 0px 0px 50px;
+			text-align: center;
+			color: white;
+		}
+
+		.box > h1 {
+			font-size: 60px;
+			margin-top: 60px;
+		}
+
+		.box >h3 {
+			margin-top: -10px;
+		}
+
+		.boxpic {
+			margin-top: -10px;
+			margin-bottom: -75px;
+		}
+
+		.con1 {
+			background-image: linear-gradient(rgba(39, 84, 255, 0.3), rgba(0, 0, 0, 0.30));
+			border-color: darkblue;			
+		}
+
+		.con2 {
+			background-image: linear-gradient(rgba(255, 102, 76, 0.3), rgba(0, 0, 0, 0.30));
+			border-color: darkred;			
+		}
+
+		.con3 {
+			background-image: linear-gradient(rgba(66, 255, 51, 0.3), rgba(0, 0, 0, 0.30));
+			border-color: darkgreen;			
+		}
+
+		.con4 {
+			background-image: linear-gradient(rgba(255, 163, 108, 0.3), rgba(0, 0, 0, 0.30));
+			border-color: darkorange;			
+		}
+
+		.graph {
+			float: left;
+			width: 92%;
+			height: 500px;
+			background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0));
+			border-color: red;
+			border: solid;
+			border-width: 3px;
+			border-color: red;
+			border-radius: 10px;
+			margin-left: 50px;
+			margin-top: 70px;
+		}
+
+		.graph > img {
+			width: 800px;
+			margin-left: 250px;
+			margin-top: 0px;
+			border-radius: 20px;
+		}
+
+		.graph > h1 {
+			color: white;
+			text-align: center;
+		}
+
+		#prof {
+			width: 350px;
+			height: 350px;
+			border: solid;
+			border-color: red;
+			border-width: 2px;
+			background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0));
+			border-radius: 20px;
+			margin: 0 auto;
+			margin-top: 70px;
+			text-align: center;
+			color: white;
+			text-transform: uppercase;
+		}
+
+		#lastn {
+			font-size: 40px;
+			margin-top: 10px;
+		}
+
+		#firstn {
+			font-size: 15px;
+			margin-top: -20px;
+		}
+
+		#position {
+			font-size: 20px;
+			margin-top: -10px;
+			color: red;
+		}
+
+		#profpic > img {
+			border-radius: 50%;
+		}
+
+		#profpic {
+			margin:0 auto;
+			margin-top: 20px;
+			width: 200px;
+			height: 200px;
+		}
+
+		#profdesc {
+			width: 90%;
+			height: 1070px;
+			background-color: rgba(0, 0, 0, 0.5);
+			border-radius: 20px;
+			border: solid;
+			border-color: blue;
+			border-width: 2px;
+			margin: 0 auto;
+		}
+
+		.inp {
+			display: none;
+			margin-left: 20px;
+			font-size: 20px;
+			margin-bottom: 40px;
+			margin-top: -25px;
+			width: 300px;
+			border-radius: 20px;
+			color: black;
+			margin-top: -2px;
+		}
+
+		.vis {
+			display: block;
+			margin-left: 20px;
+			font-size: 20px;
+			margin-bottom: 40px;
+			margin-top: 25px;
+			color: white;
+		}
+
+		.mar {
+			margin-left: 20px;
+		}
+
+		.mar > h1 {
+			color: blue;
+		}
+
+		#edit {
+			display: block;
+			width: 620px;
+			color: red;
+			border: solid;
+			border-color: red;
+			border-radius: 25px;
+			background-color: rgba(0, 0, 0, 0);
+			font-size: 30px;
+			margin-left: 620px;
+			cursor: pointer;
+			transition: 0.5s;
+		}
+
+		#edit:hover {
+			background-color: white;
+		}
+
+		#mmname {
+			text-transform: uppercase;
+		}
+
+		.hid {
+			display: none;
+			width: 620px;
+			color: red;
+			border: solid;
+			border-color: red;
+			border-radius: 25px;
+			background-color: rgba(0, 0, 0, 0);
+			font-size: 30px;
+			cursor: pointer;
+			transition: 0.5s;
+		}
+
+		.hid:hover {
+			background-color: white;
+		}
+
+		.descbut {
+			display: inline-flex;
+			margin: 0 auto;
+		}
+
+		.logo > h1 {
+			color: red;
+			text-align: center;
+			margin-top: -20px;
+		}
+
+		.logo > h3 {
+			color: white;
+			text-align: center;
+			margin-top: -30px;
+			margin-left: 70px;
+		}
+
+		#faculty > #profdesc {
+			border-color: red;
+			margin-top: 50px;
+			height: 800px;
+		}
+
+		.facbox {
+			width: 300px;
+			height: 300px;
+			background-image: linear-gradient(rgba(0,0,0,0), rgba(255,255,255,0.5));
+			border: solid;
+			border-color: red;
+			border-radius: 20px;
+			margin: 20px;
+			margin: 0 auto;			
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		.facbox > img {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+		}
+
+		#title {
+			color: white;
+			text-align: center;
+		}
+
+		.descmarg {
+			margin-top: -50px;
+		}
+
+		#lower {
+			display: inline-flex;
+			margin-top: 50px;
+			margin-left: 100px;
+			gap: 70px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="nav">
+		<div class="logo">
+			<img src="logo.png" id="logo">
+			<h1>Gardenia</h1>
+			<h3>Careers</h3>
+		</div>
+		<ul>
+			<li onclick="stats()">- Stats</li>
+			<li onclick="profile()">- Profile</li>
+			<li onclick="faculty()">- Faculty</li>
+			<li id="logout" onclick="login()">- Logout</li>
+		</ul>
+	</div>
+
+	<div id="content">
+		<div class="box con1">
+			<div class="boxpic">
+				<img src="visit.png" width="80px" height="80px">
+			</div>
+			<h1>1.3M</h1>
+			<h3>VISITS</h3>
+		</div>
+		<div class="box con2">
+			<div class="boxpic">
+				<img src="sales.png" width="80px" height="80px">
+			</div>
+			<h1>500.6K</h1>
+			<h3>Monthly Sales</h3>
+		</div>
+		<div class="box con3">
+			<div class="boxpic">
+				<img src="rev.png" width="80px" height="80px">
+			</div>
+			<h1>₱30.1M</h1>
+			<h3>Monthly Revenue</h3>
+		</div>
+		<div class="box con4">
+			<div class="boxpic">
+				<img src="shipping.png" width="80px" height="80px">
+			</div>
+			<h1>12M</h1>
+			<h3>Shipped Overseas</h3>
+		</div>
+
+		<div class="graph">
+			<h1>Sales Graph</h1>
+			<img src="graph.png">
+		</div>
+	</div>
+
+	<div id="profile">
+		<div id="prof">
+			<div id="profpic">
+				<img src="law.jpg" width="200px" height="200px">
+			</div>
+			<h1 id="lastn">Damondamon</h1>
+			<h3 id="firstn">Lawrence Isagani Miguel B.</h3>
+			<h2 id="position">(relationship manager)</h2>
+		</div>
+		<br><br><br>
+		<div id="profdesc">
+			<div class="mar fname">
+				<h1>First Name:</h1>
+				<input type="text" class="inp" id="infname" value="Lawrence Isagani Miguel">
+				<h4 class="vis" id="ffname">Lawrence Isagani Miguel</h4>
+			</div>
+			<div class="mar mname">
+				<h1>Middle Initial:</h1>
+				<input type="text" class="inp" id="inmname" value="B">
+				<h4 class="vis" id="mmname">B.</h4>
+			</div>
+			<div class="mar lname">
+				<h1>Last Name:</h1>
+				<input type="text" class="inp" id="inlname" value="Damondamon">
+				<h4 class="vis" id="llname">Damondamon</h4>
+			</div>
+			<div class="mar bday">
+				<h1>Birth Date:</h1>
+				<input type="text" class="inp" id="inbday" value="July 2, 2005" placeholder="(Month Date, Year)">
+				<h4 class="vis" id="bbday">July 2, 2005</h4>
+			</div>
+			<div class="mar phone">
+				<h1>Phone Number:</h1>
+				<input type="text" class="inp" id="inphone" value="0905 595 5847">
+				<h4 class="vis" id="pphone">0905 595 5847</h4>
+			</div>
+			<div class="mar email">
+				<h1>Email:</h1>
+				<input type="text" class="inp" id="inemail" value="damondamonlim@gmail.com">
+				<h4 class="vis" id="eemail">damondamonlim@gmail.com</h4>
+			</div>
+			<div class="mar pos">
+				<h1>Position:</h1>
+				<input type="text" class="inp" id="inpos" value="Relationship Manager">
+				<h4 class="vis" id="ppos">Relationship Manager</h4>
+			</div>
+			<div class="mar idnum">
+				<h1>Id Number:</h1>
+				<input type="text" class="inp" id="inidnum" value="2089734">
+				<h4 class="vis" id="iidnum">2089734</h4>
+			</div>
+			<div class="descbut">
+				<input type="button" value="Edit" onclick="edit()" id="edit">
+				<input type="button" value="Save" onclick="save()" class="hid Save">
+				<input type="button" value="Cancel" onclick="cancel()" class="hid Cancel">
+			</div>
+		</div>
+	</div>
+
+	<div id="faculty">
+		<div id="profdesc">
+			<h1 id="title">- FACULTY -</h1>
+			<div class="facbox">
+				<div id="profpic">
+					<img src="kent.jpg" width="150px" height="150px">
+				</div>
+				<div class="descmarg">
+					<h1 id="lastn">De Luna</h1>
+					<h3 id="firstn">Kent Ruzzel S.</h3>
+					<h2 id="position">(Company Manager)</h2>
+				</div>
+			</div>
+			<div id="lower">
+				<div class="facbox">
+					<div id="profpic">
+						<img src="kila.jpg" width="150px" height="150px">
+					</div>
+					<div class="descmarg">
+						<h1 id="lastn">Kila</h1>
+						<h3 id="firstn">danikha C.</h3>
+						<h2 id="position">(Marketing Manager)</h2>
+					</div>
+				</div>
+				<div class="facbox">
+					<div id="profpic">
+						<img src="law.jpg" width="150px" height="150px">
+					</div>
+					<div class="descmarg">
+						<h1 id="lastn" style="font-size: 35px; margin-bottom:30px;">Damondamon</h1>
+						<h3 id="firstn">Lawrence Isagani Miguel B.</h3>
+						<h2 id="position">(Relationship Manager)</h2>
+					</div>
+				</div>
+				<div class="facbox">
+					<div id="profpic">
+						<img src="yang.jpg" width="150px" height="150px">
+					</div>
+					<div class="descmarg">
+						<h1 id="lastn">Pagumpana</h1>
+						<h3 id="firstn">Aira</h3>
+						<h2 id="position">(Finance Manager)</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function login(){
+			window.location.href = "login.html"
+		}
+
+		function stats(){
+			let content = document.getElementById('content');
+			let content2 = document.getElementById('profile');
+			let content3 = document.getElementById('faculty');
+			let vis = document.getElementsByClassName('vis');
+		    let inp = document.getElementsByClassName('inp');
+		    let but = document.getElementById('edit')
+		    let buthid = document.getElementsByClassName('hid')
+
+		    // Iterate through the 'vis' elements and hide them
+		    for (let i = 0; i < inp.length; i++) {
+		        inp[i].style.display = "none";
+		    }
+
+		    // Iterate through the 'inp' elements and show them
+		    for (let i = 0; i < vis.length; i++) {
+		        vis[i].style.display = "block";
+		    }
+
+		    but.style.display = "block"
+
+		    for (let i = 0; i < buthid.length; i++) {
+		        buthid[i].style.display = "none";
+		    }
+
+			content.style.display = "block"
+			content2.style.display = "none"
+			content3.style.display = "none"
+
+		}
+
+		function profile(){
+			let content = document.getElementById('content');
+			let content2 = document.getElementById('profile');
+			let content3 = document.getElementById('faculty');
+
+			content.style.display = "none"
+			content2.style.display = "block"
+			content3.style.display = "none"
+
+		}
+
+		function faculty(){
+			let content = document.getElementById('content');
+			let content2 = document.getElementById('profile');
+			let content3 = document.getElementById('faculty');
+			let vis = document.getElementsByClassName('vis');
+		    let inp = document.getElementsByClassName('inp');
+		    let but = document.getElementById('edit')
+		    let buthid = document.getElementsByClassName('hid')
+
+		    // Iterate through the 'vis' elements and hide them
+		    for (let i = 0; i < inp.length; i++) {
+		        inp[i].style.display = "none";
+		    }
+
+		    // Iterate through the 'inp' elements and show them
+		    for (let i = 0; i < vis.length; i++) {
+		        vis[i].style.display = "block";
+		    }
+
+		    but.style.display = "block"
+
+		    for (let i = 0; i < buthid.length; i++) {
+		        buthid[i].style.display = "none";
+		    }
+
+			content.style.display = "none"
+			content2.style.display = "none"
+			content3.style.display = "block"
+
+		}
+
+		function edit() {
+		    let vis = document.getElementsByClassName('vis');
+		    let inp = document.getElementsByClassName('inp');
+		    let but = document.getElementById('edit')
+		    let buthid = document.getElementsByClassName('hid')
+
+		    for (let i = 0; i < vis.length; i++) {
+		        vis[i].style.display = "none";
+		    }
+
+		    for (let i = 0; i < inp.length; i++) {
+		        inp[i].style.display = "block";
+		    }
+
+		    but.style.display = "none"
+
+		    for (let i = 0; i < buthid.length; i++) {
+		        buthid[i].style.display = "block";
+		    }
+		}
+
+		function cancel() {
+		    // Get all elements with the class 'vis' and 'inp'
+		    let vis = document.getElementsByClassName('vis');
+		    let inp = document.getElementsByClassName('inp');
+		    let but = document.getElementById('edit')
+		    let buthid = document.getElementsByClassName('hid')
+
+		    // Iterate through the 'vis' elements and hide them
+		    for (let i = 0; i < inp.length; i++) {
+		        inp[i].style.display = "none";
+		    }
+
+		    // Iterate through the 'inp' elements and show them
+		    for (let i = 0; i < vis.length; i++) {
+		        vis[i].style.display = "block";
+		    }
+
+		    but.style.display = "block"
+
+		    for (let i = 0; i < buthid.length; i++) {
+		        buthid[i].style.display = "none";
+		    }
+		}
+
+		function save(){
+			let lastn = document.getElementById('lastn')
+			let firstn = document.getElementById('firstn')
+			let position = document.getElementById('position')
+
+		    document.getElementById('ffname').textContent = document.getElementById('infname').value;
+		    document.getElementById('mmname').textContent = document.getElementById('inmname').value + ".";
+		    document.getElementById('llname').textContent = document.getElementById('inlname').value;
+		    document.getElementById('bbday').textContent = document.getElementById('inbday').value;
+		    document.getElementById('pphone').textContent = document.getElementById('inphone').value;
+		    document.getElementById('eemail').textContent = document.getElementById('inemail').value;
+		    document.getElementById('ppos').textContent = document.getElementById('inpos').value;
+		    document.getElementById('iidnum').textContent = document.getElementById('inidnum').value;
+
+		    lastn.textContent = document.getElementById('llname').textContent
+		    firstn.textContent = document.getElementById('ffname').textContent + " " + document.getElementById('mmname').textContent
+		    position.textContent = "(" + document.getElementById('ppos').textContent + ")"
+
+		    cancel();
+		}
+		
+	</script>
+
+</body>
+</html>

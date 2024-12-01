@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gardenia</title>
+	<link rel="icon" type="image/x-icon" href="logo.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		
+		body {
+			margin: 0px;
+		}
+
+		.header {
+			height: 65px;
+			width: 100%;
+			background-color: rgba(255, 0, 0, 1);
+			transition: 1s;
+			margin-top: -10px;
+			position: fixed;
+			z-index: 1;
+			transition: 1s;
+		}
+
+		.header > ul {
+			list-style-type: none;
+			color: white;
+			font-size: 30px;
+			margin-top: 20px;
+		}
+
+		.holder {
+			display: ;
+		}
+
+		.gallery {
+			background-color: rgba(255, 255, 255, 0.8);
+			width: 70%;
+			margin: 0 auto;
+			height: 840px;
+			border-radius: 3px;
+			margin-top: 40px;
+		}
+
+		#gallery {
+		  margin: 30px;
+		  float: left;
+		  width: 200px;
+		  text-align: center;
+		  background-color: white;
+		  border-radius: 5px;
+		  transition: 1s;
+		  z-index: 1000;
+		}
+
+		#li {
+			display: inline;
+			margin-right: 100px;
+			cursor: pointer;
+			transition: 1.2s;
+			border-radius: 3px;
+		}
+
+		#li:hover {
+			color: black;
+			background-color: white;
+			border-radius: 3px;
+		}
+
+		#container {
+			background-image: url("Gardenia.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 100%;
+			height: 740px;
+			z-index: -5;
+		}
+
+		#container2 {
+			background-image: url("trucks.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 100%;
+			height: 940px;
+			z-index: -5;
+			margin-top: -7px;
+			position: absolute;
+		}
+
+		#prod {
+			height: 600px;
+			width: 40%;
+			border-radius: 10px;
+			margin-top: 300px;
+			background-color: rgba(255, 255, 255, 0.8);
+			position: absolute;
+			left: 50%;
+			right: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+		}
+
+		#search {
+			margin-top: -70px;
+			margin-right: 20px;
+		}
+
+		#searching {
+			width: 30%;
+  			box-sizing: border-box;
+  			border: 2px solid #ccc;
+  			border-radius: 4px;
+  			font-size: 16px;
+  			background-color: white;
+  			background-image: url('search.png');
+  			background-size: 60px;
+  			background-position: -2% -8px; 
+  			background-repeat: no-repeat;
+  			padding: 12px 20px 12px 40px;
+  			float: right;
+  			border-radius: 10px;
+		}
+
+		#login {
+			color: white;
+			cursor: pointer;
+			transition: 1.3s;
+			float: right;
+			height: 35px;
+			width: 85px;
+			padding: 0px;
+			text-align: center;
+			font-size: 30px;
+			margin-right: 20px;
+			margin-top: 10px;
+		}
+
+		#login:hover {
+			color: black;
+			background-color: white;
+			border-radius: 5px;
+		}
+
+		#login > p {
+			margin-top: -3px;
+			margin-right: 20px;
+		}
+
+		#prodimg {
+			border: solid;
+			border-color: red;
+			border-width: 3px;
+			border-radius: 5px;
+			width: 300px;
+			height: 300px;
+			margin:0 auto;
+			margin-top: 30px;
+			padding: 1px;
+		}
+
+		.desc {
+			border-radius: 40px;
+			transition: 1s;
+		}
+
+		.desc:hover {
+			background-color: blue;
+			color: white;
+		}
+
+		.b1 {
+			background-color: blue;
+			color: white;
+		}
+
+		.slideshow-container {
+			background-color: white;
+		  	position: relative;
+		  	max-width: 400px;
+		  	height: 350px;
+		  	max-height: 400px;
+		  	margin: 50px auto;
+		  	overflow: hidden;
+		  	border-radius: 20px;
+		  	margin-top: 100px;
+		}
+
+		.slide {
+			margin: 0 auto;
+		  display: none;
+		  width: 300px;
+		  height: 200px;
+		}
+
+		.slide img {
+		  width: 300px;
+		  height: 200px;
+		  border-radius: 10px;
+		}
+
+		.prev, .next {
+		  position: absolute;
+		  top: 50%;
+		  transform: translateY(-50%);
+		  padding: 10px;
+		  cursor: pointer;
+		  background-color: rgba(0, 0, 0, 0.5);
+		  color: white;
+		  border: none;
+		  border-radius: 5px;
+		}
+
+		.prev {
+		  left: 10px;
+		}
+
+		.next {
+		  right: 10px;
+		}
+
+		.fade {
+		  animation: fadeEffect 1s;
+		}
+
+		@keyframes fadeEffect {
+		  from { opacity: 0.4; }
+		  to { opacity: 1; }
+		}
+
+		#picshow {
+			margin-left: 30px;
+			float: left;
+		}
+
+		#title {
+			color: red;
+			text-align: center;
+		}
+
+		#buy {
+			border: solid;
+			border-color: red;
+			border-radius: 15px;
+			border-width: 3px;
+			color: red;
+			font-size: 25px;
+			cursor: pointer;
+			transition: 0.5s;
+		}
+
+		#buy:hover {
+			border: solid;
+			border-color: blue;
+			border-radius: 15px;
+			border-width: 3px;
+			color: white;
+			background-color: red;
+		}
+
+		#prod > h1 {
+			font-size: 50px;
+			margin-top: 80px;
+		}
+
+		#prod > input {
+			margin-top: 50px;
+		}
+
+		.footer {
+			text-align: center;
+			background-color: blue;
+			margin-top: 900px;
+			width: 100%;
+			height: 150px;
+		}
+
+		.footer > h2 {
+			color: white;
+		}
+
+		.cs {
+			display: inline-flex;
+		}
+
+		.fa {
+			padding: 20px;
+			font-size: 30px;
+			width: 30px;
+			text-align: center;
+			text-decoration: none;
+			margin: 5px 2px;
+			border-radius: 50%;
+			color: white;
+		}
+
+	</style>
+</head>
+<body>
+<div id="container">
+	<div class="header">
+		<ul >
+			<li id="li" onclick="home()">Home</li>
+			<li id="li" style="background-color: white; color: black;" onclick="product()">Product</li>
+			<li id="li" onclick="help()">Help</li>
+		</ul>
+		<div id="search" >
+    		<form>
+				<input type="text" name="search" placeholder="Search..." id="searching">
+			</form>
+		</div>
+		<div id="login" onclick="login()">
+			<p>Admin</p>
+		</div>
+	</div>
+	<br><br><br><br><br>
+	<div id="picshow">
+		<div class="slideshow-container">
+			<h1 id="title">BEST SELLER!</h1>
+		    <div class="slide fade">
+		      <img src="white.png" alt="Slide 1" width="10px" height="600px">
+		    </div>
+		    <div class="slide fade">
+		      <img src="pan.png" alt="Slide 2" width="10px" height="600px">
+		    </div>
+		    <div class="slide fade">
+		      <img src="soft.png" alt="Slide 3" width="10px" height="600px">
+		    </div>
+		    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+		    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+		</div>
+	</div>
+	<div id="prod">
+		<div id="prodimg">
+			<img src="white.png" alt="bread" width="300" height="300">
+		</div>
+		<h1>- Classic White Bread -</h1>
+		<input type="button" id="buy" value="PURCHASE">
+	</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<div id="container2">
+		<div class="gallery">
+			<div id="gallery" class="bread">
+				  <img src="white.png" alt="bread" width="200" height="200">
+				  <div class="desc b1">Bread</div>
+			</div>
+			<div id="gallery" class="bread">
+				  <img src="thick.png" alt="bread" width="200" height="200">
+				  <div class="desc b2">Bread</div>
+			</div>
+			<div id="gallery" class="bread">
+				  <img src="fiber.png" alt="bread" width="200" height="200">
+				  <div class="desc b3">Bread</div>
+			</div>
+			<div id="gallery" class="bread">
+				  <img src="raisin.jpg" alt="bread" width="100" height="200">
+				  <div class="desc b4">Bread</div>
+			</div>
+			<div id="gallery" class="bread">
+				  <img src="butter.jpg" alt="bread" width="200" height="200">
+				  <div class="desc b5">Bread</div>
+			</div>
+			<div id="gallery" class="bread">
+				  <img src="black.png" alt="bread" width="200" height="200">
+				  <div class="desc b6">Bread</div>
+			</div>
+			<div id="gallery" class="bread">
+				  <img src="neubake.png" alt="bread" width="200" height="200">
+				  <div class="desc b7">Bread</div>
+			</div>
+			<div id="gallery" class="bread">
+				  <img src="chip.jpg" alt="bread" width="200" height="200">
+				  <div class="desc b8">Bread</div>
+			</div>
+			<div id="gallery" class="bread">
+				  <img src="monggo.jpg" alt="bread" width="200" height="200">
+				  <div class="desc b9">Bread</div>
+			</div>
+			<div id="gallery" class="bread">
+				  <img src="pan.png" alt="bread" width="200" height="200">
+				  <div class="desc b10">Bread</div>
+			</div>
+			<div id="gallery" class="bread">
+				  <img src="soft.png" alt="bread" width="200" height="200">
+				  <div class="desc b11">Bread</div>
+			</div>
+			<div id="gallery" class="bread">
+				  <img src="wheatpan.png" alt="bread" width="200" height="200">
+				  <div class="desc b12">Bread</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<div class="cs">
+		<a href="#" class="fa fa-facebook"></a>
+		<a href="#" class="fa fa-twitter"></a>
+		<a href="#" class="fa fa-linkedin"></a>
+		<a href="#" class="fa fa-dribbble"></a>
+		<a href="#" class="fa fa-vimeo"></a>
+	</div>
+	<h2>Contact Us</h2>
+</div>
+
+	<script type="text/javascript">
+		let slideIndex = 0;
+		showSlides();
+
+		function showSlides() {
+		  let slides = document.querySelectorAll('.slide');
+		  slides.forEach(slide => (slide.style.display = 'none'));
+		  
+		  slideIndex++;
+		  if (slideIndex > slides.length) slideIndex = 1;
+		  slides[slideIndex - 1].style.display = 'block';
+
+		  setTimeout(showSlides, 3000); // Change slide every 3 seconds
+		}
+
+		function changeSlide(n) {
+		  let slides = document.querySelectorAll('.slide');
+		  slides.forEach(slide => (slide.style.display = 'none'));
+
+		  slideIndex += n;
+		  if (slideIndex > slides.length) slideIndex = 1;
+		  if (slideIndex < 1) slideIndex = slides.length;
+		  
+		  slides[slideIndex - 1].style.display = 'block';
+		}
+		 
+		function home() {
+			window.location.href = "Index.html"
+		}
+
+		function about() {
+			window.location.href = "AboutUs.html"
+		}
+
+		function product() {
+			window.location.href = "Product.html"
+		}
+
+		function help() {
+			window.location.href = "Help.html"
+		}
+
+		function login() {
+			window.location.href = "login.html"
+		}
+
+		function bread1() {
+
+		}
+
+	</script>
+
+</body>
+</html>
